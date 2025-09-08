@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Optimización de Transporte Minero - CMP Copiapó</title>
+    <meta name="description" content="Aplicación para optimizar el transporte de material en operaciones mineras usando programación lineal">
+    <meta name="keywords" content="optimización, minería, transporte, programación lineal, pulp">
+    
+    <meta property="og:title" content="Optimización de Transporte Minero - CMP Copiapó">
+    <meta property="og:description" content="Aplicación para optimizar el transporte de material en operaciones mineras usando programación lineal">
+    
+    <meta name="twitter:title" content="Optimización de Transporte Minero - CMP Copiapó">
+    <meta name="twitter:description" content="Aplicación para optimizar el transporte de material en operaciones mineras usando programación lineal">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js"></script>
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #f59e0b;
+            --accent-color: #059669;
+            --background-color: #f8fafc;
+            --surface-color: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+        }
+    }
+
+    @layer base {
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+    }
+
+    @layer components {
+        .btn {
+            @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+        }
+        
+        .btn-primary {
+            @apply bg-[var(--primary-color)] text-white hover:opacity-90 focus:ring-[var(--primary-color)];
+        }
+        
+        .btn-secondary {
+            @apply bg-[var(--secondary-color)] text-white hover:opacity-90 focus:ring-[var(--secondary-color)];
+        }
+        
+        .btn-success {
+            @apply bg-[var(--success-color)] text-white hover:opacity-90 focus:ring-[var(--success-color)];
+        }
+        
+        .card {
+            @apply bg-[var(--surface-color)] border border-[var(--border-color)] rounded-xl shadow-sm;
+        }
+        
+        .input-field {
+            @apply w-full px-3 py-2 border border-[var(--border-color)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent;
+        }
+        
+        .table-container {
+            @apply overflow-x-auto border border-[var(--border-color)] rounded-lg;
+        }
+        
+        .data-table {
+            @apply w-full border-collapse;
+        }
+        
+        .data-table th {
+            @apply bg-gray-50 px-3 py-2 text-left text-sm font-medium text-[var(--text-secondary)] border-b border-[var(--border-color)];
+        }
+        
+        .data-table td {
+            @apply px-3 py-2 text-sm text-[var(--text-primary)] border-b border-[var(--border-color)];
+        }
+    }
+    </style>
+
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/ParameterInput.js"></script>
+    <script type="text/babel" src="components/ResultsViewer.js"></script>
+    <script type="text/babel" src="components/OptimizationRunner.js"></script>
+    <script type="text/babel" src="utils/optimizationEngine.js"></script>
+    <script type="text/babel" src="app.js"></script>
+    
+    <script>
+        const ChartJS = window.Chart;
+    </script>
+</body>
+</html>
